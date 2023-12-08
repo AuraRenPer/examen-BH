@@ -11,11 +11,17 @@ const ListProduct = () => {
         setProducts(products.data)
     }
     const deleteProduct = async (id) => {
-        await axios.delete(`http://localhost:8080/products/${id}`)
-        getProducts()
-    }
+        try {
+            await axios.delete(`http://localhost:8080/products/${id}`);
+            getProducts();
+        } catch (error) {
+            console.error('Error deleting product:', error);
+        }
+    };
+    
     return (
         <div>
+            <h1>Listado de productos</h1>
             <Link to="/add" className="button is-primary mt-5">Añadir nuevo producto</Link>
             <table className="table is-striped is-fullwidth">
                 <thead>
