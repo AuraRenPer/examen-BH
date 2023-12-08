@@ -6,7 +6,7 @@ const ListProduct = () => {
     useEffect(() => {
         getProducts();
     }, [])
-    const getProducts = async() => {
+    const getProducts = async () => {
         const products = await axios.get('http://localhost:8080/products')
         setProducts(products.data)
     }
@@ -21,14 +21,14 @@ const ListProduct = () => {
                 <thead>
                     <tr>
                         <th width="150">Acciones</th>
-                        <th>ID</th>                        
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Precio</th>      
-                        <th>Imagen</th>                                         
+                        <th>Precio</th>
+                        <th>Imagen</th>
                     </tr>
                 </thead>
                 <tbody>
-                    { products.map((product, index) => (
+                    {products.map((product, index) => (
                         <tr key={product.id}>
                             <td>
                                 <Link to={`/edit/${product.id}`} className="button is-small is-info">Edit</Link>
@@ -38,10 +38,9 @@ const ListProduct = () => {
                             <td>{index + 1}</td>
                             <td>{product.nombre}</td>
                             <td>{product.precio}</td>
-                            <td>{product.imagen}</td>                                                       
+                            <td>{product.imagen}</td>
                         </tr>
-                    ))
-                    }
+                    ))}
                 </tbody>
             </table>
         </div>
