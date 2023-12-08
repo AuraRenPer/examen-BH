@@ -19,7 +19,7 @@ const EditProduct = () => {
         formData.append('cantidad', cantidad);
         formData.append('imagen', imagen); // Agregar la imagen al FormData
 
-        await axios.post(`http://localhost:8080/products/update/${id}`, formData, {
+        await axios.put(`http://localhost:8080/products/${id}`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
