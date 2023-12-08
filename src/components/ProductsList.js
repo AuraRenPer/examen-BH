@@ -24,6 +24,7 @@ const ListProduct = () => {
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Precio</th>
+                        <th>Cantidad</th>
                         <th>Imagen</th>
                     </tr>
                 </thead>
@@ -31,13 +32,14 @@ const ListProduct = () => {
                     {products.map((product, index) => (
                         <tr key={product.id}>
                             <td>
-                                <Link to={`/edit/${product.id}`} className="button is-small is-info">Edit</Link>
+                                <Link to={`/edit/${product.id}`} className="button is-small is-info">Editar</Link>
                                 &nbsp;
-                                <button onClick={() => deleteProduct(product.id)} className="button is-small is-danger">Delete</button>
+                                <button onClick={() => deleteProduct(product.id)} className="button is-small is-danger">Borrar</button>
                             </td>
                             <td>{index + 1}</td>
                             <td>{product.nombre}</td>
                             <td>{product.precio}</td>
+                            <td>{product.cantidad}</td>
                             <td>
                                 {product.imagen && ( 
                                     <img
