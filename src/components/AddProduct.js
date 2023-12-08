@@ -5,8 +5,9 @@ import axios from 'axios';
 import 'bulma/css/bulma.min.css';
 
 const AddProduct = () => {
-    const [nombre, setTitle] = useState('');
-    const [precio, setPrice] = useState(0);
+    const [nombre, setNombre] = useState('');
+    const [precio, setPrecio] = useState(0);
+    const [cantidad, setCantidad] = useState(0);
     const [imagen, setImage] = useState(null);
     const navigate = useNavigate();
 
@@ -31,25 +32,37 @@ const AddProduct = () => {
         <div className="container">
             <form onSubmit={saveProduct} encType="multipart/form-data">
                 <div className="field">
-                    <label className="label">Name</label>
+                    <label className="label">Nombre</label>
                     <div className="control">
                         <input
                             type="text"
                             className="input"
                             value={nombre}
-                            onChange={(e) => setTitle(e.target.value)}
+                            onChange={(e) => setNombre(e.target.value)}
                             placeholder="Nombre"
                         />
                     </div>
                 </div>
                 <div className="field">
-                    <label className="label">Price</label>
+                    <label className="label">Precio</label>
                     <div className="control">
                         <input
                             type="text"
                             className="input"
                             value={precio}
-                            onChange={(e) => setPrice(e.target.value)}
+                            onChange={(e) => setPrecio(e.target.value)}
+                            placeholder="Precio"
+                        />
+                    </div>
+                </div>
+                <div className="field">
+                    <label className="label">Cantidad</label>
+                    <div className="control">
+                        <input
+                            type="text"
+                            className="input"
+                            value={cantidad}
+                            onChange={(e) => setCantidad(e.target.value)}
                             placeholder="Precio"
                         />
                     </div>

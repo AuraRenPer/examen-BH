@@ -38,9 +38,18 @@ const ListProduct = () => {
                             <td>{index + 1}</td>
                             <td>{product.nombre}</td>
                             <td>{product.precio}</td>
-                            <td>{product.imagen}</td>
+                            <td>
+                                {product.imagen && ( 
+                                    <img
+                                        src={`http://localhost:8080uploads/${product.imagen}`} 
+                                        alt={product.nombre}
+                                        style={{ maxWidth: '100px', maxHeight: '100px' }} 
+                                    />
+                                )}
+                            </td>
                         </tr>
                     ))}
+
                 </tbody>
             </table>
         </div>
