@@ -26,15 +26,15 @@ const EditProduct = () => {
         <div>
             <form onSubmit={ updateProduct }>
                 <div className="field">
-                    <label className="label">Nama Barang</label>
-                    <input type="text" className="input" value={ title } onChange={ (e) => setTitle(e.target.value) } placeholder="nama" />
+                    <label className="label">Nombre</label>
+                    <input type="text" className="input" value={ title } onChange={ (e) => setTitle(e.target.value) } placeholder="Actualiza el nombre" />
                 </div>
                 <div className="field">
-                    <label className="label">Harga</label>
-                    <input type="text" className="input" value={ price } onChange={ (e) => setPrice(e.target.value) } placeholder="harga" />
+                    <label className="label">Precio</label>
+                    <input type="text" className="input" value={ price } onChange={ (e) => setPrice(e.target.value) } placeholder="Actualiza el precio" />
                 </div>
                 <div className="field">
-                    <button className="button is-primary">Update</button>&nbsp;
+                    <button className="button is-primary">Actualizar</button>&nbsp;
                     <button className="button is-warning" onClick={() => navigate("/")}>Cancel</button>
                 </div>
             </form>
